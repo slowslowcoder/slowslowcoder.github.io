@@ -1,346 +1,632 @@
-
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Vorapong Suppakitpaisarn's Homepage</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<style>
-	body,
-	.header,
-	.services,
-	.work,
-	.portfolio {
-		background: #fff;
-	}
-</style>
- <!-- Custom Theme files -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <!-- webfonts -->
-	<link href='//fonts.googleapis.com/css?family=Asap:400,700,400italic' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-<!-- webfonts -->
- <!---- start-smoth-scrolling---->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
- <!---- start-smoth-scrolling---->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vorapong Suppakitpaisarn</title>
+  <meta name="description" content="Homepage of Vorapong Suppakitpaisarn, Specially Appointed Associate Professor at The University of Tokyo.">
+  <style>
+    :root {
+      --text: #161616;
+      --muted: #5f6368;
+      --line: #dddddd;
+      --soft: #f7f7f7;
+      --accent: #a51c30;
+      --accent-soft: #fff2f4;
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 78px 24px 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: 48px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: #333333;
+      font-size: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .profile-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--soft);
+    }
+
+    .monogram {
+      width: 82px;
+      height: 82px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+    }
+
+    .detail-list div {
+      display: grid;
+      gap: 4px;
+    }
+
+    .detail-list dt {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .detail-list dd {
+      margin: 0;
+    }
+
+    main {
+      border-top: 1px solid var(--line);
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 58px 24px;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .lead {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #333333;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      border: 1px solid #e8b7c0;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #7d1122;
+      padding: 5px 11px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .item-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .item-list li {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .item-title {
+      font-weight: 700;
+    }
+
+    .item-meta {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .timeline-year {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .timeline-body {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-body h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-body p {
+      margin: 0;
+      color: #333333;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+        gap: 28px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .section-header,
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-	<body>
-		<!-- container -->
-			<!-- header -->
-			<div id="home" class="header">
-				<div class="container">
-				<!-- top-hedader -->
-				<div class="top-header">
-					<!-- /logo -->
-					<!--top-nav---->
-					<div class="top-nav">
-					<div class="navigation">
-					
-					<div class="navigation-right">
-						<span class="menu"><img src="images/menu.png" alt=" " /></span>
-						<nav class="link-effect-3" id="link-effect-3">
-							<ul class="nav1 nav nav-wil">
-								<li class="active"><a data-hover="Home" href="index.html">Home</a></li>
-								<li><a class="scroll" data-hover="Latest Work" href="#services" >Latest Work</a></li>
-								<li><a class="scroll" data-hover="Experience" href="#work">Experience</a></li>
-								<li><a class="scroll" data-hover="Publications" href="#port">Publications</a></li>
-							</ul>
-						</nav>
-							<!-- script-for-menu -->
-								<script>
-								   $( "span.menu" ).click(function() {
-									 $( "ul.nav1" ).slideToggle( 300, function() {
-									 // Animation complete.
-									  });
-									 });
-								</script>
-							<!-- /script-for-menu -->
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<!-- /top-hedader -->
-				</div>
-			<div class="banner-info">
-				<div class="col-md-7 header-right">
-					<h1>Vorapong Suppakitpaisarn</h1> 
-					<h6>vorapong@is.s.u-tokyo.ac.jp</h6>
-					<h6>Graduate School of Information Science and Technology, The University of Tokyo</h6>
-					<ul class="address">
-				
-					    <li>
-							<ul class="address-text">
-								<li><b>Positions:</b></li>
-								<li>Specially Appointed Associate Professor (tokunin-junkyoju) <br> <a href="http://www.i.u-tokyo.ac.jp/edu/icist/index_e.shtml">International Center for Information Science and Technology</a> (ICIST), <a href="http://www.i.u-tokyo.ac.jp/index_e.shtml">Graduate School of Information Science and Technology</a>, <a href="https://www.u-tokyo.ac.jp/en/">The University of Tokyo</a></li>
-							</ul>
-						</li>
-				        <li>
-							<ul class="address-text">
-								<li><b>Also with:</b></li>
-								<li><a href="http://www.i.u-tokyo.ac.jp/edu/course/cs/index_e.shtml">Department of Computer Science</a>, Graduate School of Information Science and Technology, The University of Tokyo</li>
-							</ul>
-						</li>
-				        <li>
-							<ul class="address-text">
-								<li><b>Also with:</b></li>
-								<li><a href="http://www.is.s.u-tokyo.ac.jp/english/">Department of Information Science</a>, <a href="http://www.s.u-tokyo.ac.jp/en/">Faculty of Science</a>, The University of Tokyo</li>
-							</ul>
-						</li>					
-				        <li>
-							<ul class="address-text">
-								<li><b>Also with:</b></li><br>
-								<li><a href="https://www.nii.ac.jp/">National Institute of Informatics, Japan</a></li>
-							</ul>
-						</li>			
-				        <li>
-							<ul class="address-text">
-								<li><b>Also with:</b></li><br>
-								<li><a href="https://jfli.cnrs.fr/">Japanese-French Laboratories for Informatics</a></li>
-							</ul>
-						</li>
-						<li>
-							<ul class="address-text">
-								<li><b>Interests</b></li>
-								<li>Graph Algorithms under Differential Privacy, Cryptographic Algorithms, Combinatorial Optimization</li>
-							</ul>
-						</li>							
-					</ul>
-				</div>
-				<div class="col-md-5 header-left">
-					<img src="images/img2.jpg" alt="">
-				</div>
-				<div class="clearfix"> </div>
-						
-		      </div>
-			</div>
-		</div>
-	</div>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">Vorapong Suppakitpaisarn</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-			<!-- services -->
-			<div id="services" class="services">
-				<div class="container">
-					<div class="service-head one text-center ">
-						<h3>Latest Work</h3>
-						<span class="border two"></span>
-					</div>
-					<!-- services-grids -->
-					<div class="wthree_about_right_grids w3l-agile">
-				<div class="col-md-6 wthree_about_right_grid">
-					<div class="col-xs-4 wthree_about_right_grid_left">
-						<div class="hvr-rectangle-in">
-							<i class="glyphicon glyphicon-pencil"></i>
-						</div>
-					</div>
-					<div class="col-xs-8 wthree_about_right_grid_right">
-						<h4>Teaching</h4>
-						<p><font color="black">Approximation and Online Algorithms with Applications;</font> 
-						   <font color="black">Algorithms for Information Security and Privacy;</font>
-						   <font color="black">Network Optimizations;</font>
-                           <font color="black">Introduction to Quantum Computation;</font></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 wthree_about_right_grid">
-					<div class="col-xs-4 wthree_about_right_grid_left">
-						<div class="hvr-rectangle-in">
-							<i class="glyphicon glyphicon-cog"></i>
-						</div>
-					</div>
-					<div class="col-xs-8 wthree_about_right_grid_right">
-						<h4>Organization</h4>
-						<p> We are organizing several international events at ICIST. Please refer to <a href="https://www.i.u-tokyo.ac.jp/edu/inter_ex/index_e.shtml"><font color="black">this website</font></a> for some of the programs; 
-                        I am also an organizing committee of Japan <a href="https://sigqs.ipsj.or.jp/"><font color="black">Special Interest Group on Quantum Software</font></a>
- </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 wthree_about_right_grid">
-					<div class="col-xs-4 wthree_about_right_grid_left">
-						<div class="hvr-rectangle-in">
-							<i class="glyphicon glyphicon-leaf"></i>
-						</div>
-					</div>
-					<div class="col-xs-8 wthree_about_right_grid_right">
-						<h4>Research</h4>
-                        <p><a href="https://arxiv.org/abs/2506.20234"> <font color="black">Communication-Efficient Publication of Sparse Vectors under Differential Privacy via Poisson Private Representation</font></a> (AsiaCCS'26, accepted);
-                            <a href="https://arxiv.org/abs/2512.07618"><font color="black">Approximation Algorithms for the b-Matching and List-Restricted Variants of MaxQAP</font></a> (ISCO'26, accepted);
-						<a href="https://arxiv.org/abs/2511.11319"><font color="black">Improved Differentially Private Algorithms for Rank Aggregation</font></a> (AAAI'26);</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 wthree_about_right_grid">
-					<div class="col-xs-4 wthree_about_right_grid_left">
-						<div class="hvr-rectangle-in">
-							<i class="glyphicon glyphicon-gift"></i>
-						</div>
-					</div>
-					<div class="col-xs-8 wthree_about_right_grid_right">
-						<h4>Services</h4>
-						<p>Reviewer of <font color="black">AISTATS 2026, UAI2026</font>;Program Committee of <a href="https://www.ipsj.or.jp/event/fit/fit2025/"><font color="black">FIT 2024-2026</font></a></p> 
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-
-					<!-- services-grids -->
-				</div>
-			</div>
-			<!-- services -->
-			<!--work-experience-->
-	<div id="work" class="work">
-		<div class="container">
-			<div class="service-head text-center">
-						<h3>Professional and Educational Experience</span></h3>
-						<span class="border one"></span>
-					</div>
-					<div class="time-main w3l-agile">
-							<div class="col-md-6 year-info">
-							   <ul class="year">
-								   <li>2015 - Present</li>
-								   <li>2013 - 2015</li>
-								   <li>2012 - 2013</li>
-								   <li>2007 - 2012</li>
-								   <li>2003 - 2007</li>
-								   <div class="clearfix"></div>
-								</ul>
-							</div> 
-					                        <ul class="col-md-6 timeline">
-																<li>
-																  <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
-																  <div class="timeline-panel">
-																	<div class="timeline-heading">
-																	  <h4 class="timeline-title">Graduate School of Information Science and Technology (IST), The University of Tokyo</h4>
-																	</div>
-																	<div class="timeline-body">
-																	  <p>Specially Appointed Associate Professor (Tokunin Junkyoju), Project Assistant Professor (Tokunin Koushi), Assistant Professor (jo-kyo): Teach and Research about discrete mathematics and algorithms. </p>
-																	</div>
-																  </div>
-																</li>
-																
-																<li>
-																  <div class="timeline-badge primary"><i class="glyphicon glyphicon-briefcase"></i></div>
-																  <div class="timeline-panel">
-																	<div class="timeline-heading">
-																	  <h4 class="timeline-title">Global Research Center for Big Data Mathematics, National Institute of Informatics</h4>
-																	</div>
-																	<div class="timeline-body">
-																	  <p>Project Researcher in "JST, ERATO: Kawarabayashi Large Graph Project", Network Graph Theory and Optimization Group </p>
-																	</div>
-																  </div>
-																</li>
-																
-																
-																
-																<li>
-																  <div class="timeline-badge danger"><i class="glyphicon glyphicon-briefcase"></i></div>
-																  <div class="timeline-panel">
-																	<div class="timeline-heading">
-																	  <h4 class="timeline-title">Graduate School of Information Science and Technology (IST), The University of Tokyo</h4>
-																	</div>
-																	<div class="timeline-body">
-																	  <p>Project Researcher in "a Multifaceted Approach toward Understanding the Limitations of Computation" Project </p>
-																	</div>
-																  </div>
-																</li>
-																
-																<li>
-																  <div class="timeline-badge success"><i class="glyphicon glyphicon-briefcase"></i></div>
-																  <div class="timeline-panel">
-																	<div class="timeline-heading">
-																	  <h4 class="timeline-title">Graduate School of Information Science and Technology (IST), The University of Tokyo</h4>
-																	</div>
-																	<div class="timeline-body">
-																	  <p>Research Student, Master Student, and Doctoral Student <br> Ph.D. Thesis: "Generalized Analysis Methods for Efficiency of Representations on Scalar Multiplication"</p>
-																	</div>
-																  </div>
-																</li>
-																<li>
-																  <div class="timeline-badge pass"><i class="glyphicon glyphicon-briefcase"></i></div>
-																  <div class="timeline-panel">
-																	<div class="timeline-heading">
-																	  <h4 class="timeline-title">Faculty of Enginnering, Chulalongkorn University</h4>
-																	</div>
-																	<div class="timeline-body">
-																	  <p>Bachelor Student <br> Senior Thesis: "Minimum Weight Conversion for Polygonal Complex Number Representation" </p>
-																	</div>
-																  </div>
-																</li>
-															</ul>
-								<div class="clearfix"></div>
-								</div>
-						</div>
-				</div>
-	<!--//work-experience-->
-
-		<!-- portfolio -->
-<div class="portfolio" id="port">
-				<div class="service-head text-center">
-						<h3>Publications</h3>
-<h4> Please refer to <a href="publications.pdf"> this file </a> for a complete list of my publications.</h4>
-
-</div></div>
-			<!-- //footer -->
-
-
-<div class="portfolio-modal modal fade slideanim" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content port-modal">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl"></div>
-            </div>
-        </div>
-        <div class="container">
-			<div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <div class="modal-body">
-                        <img src="images/pic1.jpg" class="img-responsive img-centered" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <section class="hero" id="home">
+    <div>
+      <p class="eyebrow">The University of Tokyo</p>
+      <h1>Vorapong Suppakitpaisarn</h1>
+      <p class="subtitle">
+        Specially Appointed Associate Professor working on graph algorithms,
+        differential privacy, cryptographic algorithms, and combinatorial optimization.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:vorapong@is.s.u-tokyo.ac.jp">Email</a>
+        <a class="button secondary" href="#publications">Publications</a>
+      </div>
     </div>
-</div>
-<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!--start-smooth-scrolling-->
-						<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-								<!--end-smooth-scrolling-->
-<!-- //for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
-	
 
-	</body>
+    <aside class="profile-panel" aria-label="Profile summary">
+      <div class="monogram" aria-hidden="true">VS</div>
+      <dl class="detail-list">
+        <div>
+          <dt>Position</dt>
+          <dd>Specially Appointed Associate Professor</dd>
+        </div>
+        <div>
+          <dt>Affiliation</dt>
+          <dd>
+            <a href="http://www.i.u-tokyo.ac.jp/edu/icist/index_e.shtml">International Center for Information Science and Technology</a>,
+            <a href="http://www.i.u-tokyo.ac.jp/index_e.shtml">Graduate School of Information Science and Technology</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:vorapong@is.s.u-tokyo.ac.jp">vorapong@is.s.u-tokyo.ac.jp</a></dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="section-label">About</div>
+        <div>
+          <h2>Academic Profile</h2>
+          <p class="lead">
+            I am with the Graduate School of Information Science and Technology at The University of Tokyo,
+            and also affiliated with the Department of Computer Science, the Department of Information Science,
+            the National Institute of Informatics, and the Japanese-French Laboratory for Informatics.
+          </p>
+        </div>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Graph Algorithms</span>
+        <span class="tag">Differential Privacy</span>
+        <span class="tag">Cryptographic Algorithms</span>
+        <span class="tag">Combinatorial Optimization</span>
+        <span class="tag">Quantum Optimization</span>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-header">
+        <div class="section-label">Research</div>
+        <div>
+          <h2>Current Work</h2>
+          <p class="lead">
+            Recent work focuses on privacy-preserving graph analysis, approximation algorithms,
+            rank aggregation, sparse vector publication, and optimization methods for emerging computational models.
+          </p>
+        </div>
+      </div>
+      <ul class="item-list">
+        <li>
+          <div class="item-title">
+            <a href="https://arxiv.org/abs/2506.20234">Communication-Efficient Publication of Sparse Vectors under Differential Privacy via Poisson Private Representation</a>
+          </div>
+          <div class="item-meta">AsiaCCS 2026, accepted</div>
+        </li>
+        <li>
+          <div class="item-title">
+            <a href="https://arxiv.org/abs/2512.07618">Approximation Algorithms for the b-Matching and List-Restricted Variants of MaxQAP</a>
+          </div>
+          <div class="item-meta">ISCO 2026, accepted</div>
+        </li>
+        <li>
+          <div class="item-title">
+            <a href="https://arxiv.org/abs/2511.11319">Improved Differentially Private Algorithms for Rank Aggregation</a>
+          </div>
+          <div class="item-meta">AAAI 2026</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="section-header">
+        <div class="section-label">Teaching</div>
+        <div>
+          <h2>Courses</h2>
+          <p class="lead">
+            Courses cover algorithms, optimization, privacy, security, and quantum computation.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Approximation and Online Algorithms</h3>
+          <p>Algorithmic techniques with applications to optimization problems.</p>
+        </article>
+        <article class="card">
+          <h3>Algorithms for Information Security and Privacy</h3>
+          <p>Algorithmic foundations for security, privacy, and protected computation.</p>
+        </article>
+        <article class="card">
+          <h3>Network Optimizations</h3>
+          <p>Optimization problems and algorithms arising from network structures.</p>
+        </article>
+        <article class="card">
+          <h3>Introduction to Quantum Computation</h3>
+          <p>Basic models, algorithms, and ideas in quantum computation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="service">
+      <div class="section-header">
+        <div class="section-label">Service</div>
+        <div>
+          <h2>Organization and Community</h2>
+          <p class="lead">
+            I organize international activities at ICIST and serve the research community through program committees and reviewing.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>International Programs</h3>
+          <p>
+            See the ICIST international exchange page for selected programs:
+            <a href="https://www.i.u-tokyo.ac.jp/edu/inter_ex/index_e.shtml">International Exchange</a>.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Professional Service</h3>
+          <p>
+            Reviewer for AISTATS 2026 and UAI 2026. Program Committee member for
+            <a href="https://www.ipsj.or.jp/event/fit/fit2025/">FIT 2024-2026</a>.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Quantum Software</h3>
+          <p>
+            Organizing committee member of the
+            <a href="https://sigqs.ipsj.or.jp/">IPSJ Special Interest Group on Quantum Software</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-header">
+        <div class="section-label">Experience</div>
+        <div>
+          <h2>Professional and Educational Experience</h2>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-year">2015 - Present</div>
+          <div class="timeline-body">
+            <h3>Graduate School of Information Science and Technology, The University of Tokyo</h3>
+            <p>Specially Appointed Associate Professor, Project Assistant Professor, and Assistant Professor. Teaching and research in discrete mathematics and algorithms.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2013 - 2015</div>
+          <div class="timeline-body">
+            <h3>Global Research Center for Big Data Mathematics, National Institute of Informatics</h3>
+            <p>Project Researcher in JST ERATO Kawarabayashi Large Graph Project, Network Graph Theory and Optimization Group.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2012 - 2013</div>
+          <div class="timeline-body">
+            <h3>Graduate School of Information Science and Technology, The University of Tokyo</h3>
+            <p>Project Researcher in the project "A Multifaceted Approach toward Understanding the Limitations of Computation."</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2007 - 2012</div>
+          <div class="timeline-body">
+            <h3>Graduate School of Information Science and Technology, The University of Tokyo</h3>
+            <p>Research student, master student, and doctoral student. Ph.D. thesis: "Generalized Analysis Methods for Efficiency of Representations on Scalar Multiplication."</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2003 - 2007</div>
+          <div class="timeline-body">
+            <h3>Faculty of Engineering, Chulalongkorn University</h3>
+            <p>Bachelor student. Senior thesis: "Minimum Weight Conversion for Polygonal Complex Number Representation."</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-header">
+        <div class="section-label">Publications</div>
+        <div>
+          <h2>Publication List</h2>
+          <p class="lead">
+            A complete publication list is available as a separate PDF.
+          </p>
+          <p>
+            <a class="button secondary" href="publications.pdf">Open publications PDF</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-label">Contact</div>
+        <div>
+          <h2>Get in Touch</h2>
+          <p class="lead">
+            Graduate School of Information Science and Technology, The University of Tokyo
+          </p>
+          <p>
+            <a href="mailto:vorapong@is.s.u-tokyo.ac.jp">vorapong@is.s.u-tokyo.ac.jp</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      Copyright &copy; Vorapong Suppakitpaisarn. Last updated 2026.
+    </div>
+  </footer>
+</body>
 </html>
-
